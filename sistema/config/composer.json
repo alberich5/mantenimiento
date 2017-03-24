@@ -1,0 +1,5 @@
+{
+    "require": {
+        "uxweb/sweet-alert": "^1.4"
+    }
+}

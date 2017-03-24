@@ -1,0 +1,31 @@
+create database todo;
+
+create sequence persona_sec;
+create table persona(
+idpersona int default nextval('persona_sec') primary key,
+nombre varchar(100),
+apellido1 varchar (100),
+apellido2 varchar (100),
+sexo int,
+idprofesion int,
+CONSTRAINT FK_persona_idprofesion FOREIGN KEY (idprofesion)
+REFERENCES profesion (idprofesion)
+);
+
+create table profesion(
+idprofesion integer not null,
+nombre varchar(100),
+CONSTRAINT PK_profesion PRIMARY KEY(idprofesion));
+
+
+
+insert into profesion(idprofesion, nombre) VALUES (5, 'Ingeniero en Sistemas');
+
+
+insert into persona(nombre,apellido1,apellido2,sexo,idprofesion) VALUES ('yaneth','rodriguez','matias',2,4);
+
+
+
+
+select p.nombre, pr.nombre, p.sexo  from persona p
+inner join profesion pr on pr.idprofesion=p.idprofesion where p.sexo=2;

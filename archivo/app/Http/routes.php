@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 	
 Route::resource('file', 'FileController');
+
+//mail
+Route::resource('mail','MailController');

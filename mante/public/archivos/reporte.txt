@@ -1,0 +1,30 @@
+REPORTE OCUPACION POR  PERIODO Y  LOCALIDAD 
+
+LOCALIDAD ---->
+
+PERIODO------->
+
+
+REPORTE OCUPACION DE HOTEL POR PERIODO 
+
+LOCALIDAD------>
+HOTEL--------->
+PERIODO------->
+
+
+REPORTE OCUPACION por dia y localidad
+
+localidad------>
+fecha-------->
+
+reporte detallado x localidad
+localidad------>
+periodo-------->
+
+
+ 
+
+
+
+
+

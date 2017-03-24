@@ -1,0 +1,126 @@
+#bienvenido{
+  background: red;
+}
+body{
+	background: #24607f;
+}
+
+#mostrar{
+ color: white;
+}
+
+#fondocolor a:hover{
+ background: #DDC9FF;
+ color: black;
+}
+.contenedorform{
+	width: 75%;
+	margin-left: 10%;
+	background: #eee;
+	padding: 10px;
+	padding-top: 15px;
+	border-radius: 10px;
+	
+}
+.white{
+    color: white;
+
+}
+
+.botoncito{
+	background: red !important;
+
+}
+
+#imagen{
+ width: 20%;
+ height: 20%;
+ float: right;
+}
+
+.formulario{
+	background: white;
+	width: 60%;
+	margin-left: 10%;
+	border-radius: 0.5em;
+	box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+	padding: 1em 1em;
+}
+.inicio{
+    background: white;
+    width: 88%;
+    margin-left: 5%;
+    border-radius: 0.5em;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    padding: 1em 1em;
+}
+.tablita{
+	background: white;
+	width: 80%;
+	margin-left: 10%;
+	border-radius: 0.5em;
+	box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+.buscador{
+	background: red;
+	margin-right: 10%;
+}
+
+
+
+
+
+aside{
+    clear: both;
+    width: 950px;
+    margin: 10px 0px;
+    height: 340px;
+    overflow: hidden;
+    background: #ECECEC;
+   
+    
+    
+}
+    @-webkit-keyframes animaSlide{
+        /*Indicamos que salimos de la posicion 0*/
+        from{ 
+            left:0px;/*Hacia la izquierda*/
+        }
+        /*Que hasta el 20% de la reproducion solo de desplace 0*/
+        20%{
+            left:0px;/*Hacia la izquierda*/
+        }
+        /*Que hasta el 40% de la reproducion solo de desplace -960*/
+        40%{
+            left:-960px;/*Hacia la izquierda*/
+        }
+        /*Que hasta el 60% de la reproducion solo de desplace -960*/
+        60%{
+            left:-960px;/*Hacia la izquierda*/
+        }
+        /*Que hasta el 80% de la reproducion solo de desplace -1920*/
+        80%{
+            left:-1920px;/*Hacia la izquierda*/
+        }
+        /*Indicamos que el final  la posicion deber ser -1920*/
+        to{
+            left:-1920px;/*Hacia la izquierda*/
+        }
+    }
+    
+ 
+
+    #slides{
+        width:2880px;/*Nuevo*/
+        height:auto;
+        overflow: hidden;
+        -webkit-animation-name: animaSlide;
+        -webkit-animation-duration: 12s;/*Cambiar en la pagina de hostinger*/
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-timing-function: ease-in-out;
+        position:relative;
+    }
+        #slides img{
+            float:left;
+        }
