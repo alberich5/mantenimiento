@@ -41,7 +41,12 @@ $categories = CategoryData::getAll();
       <textarea name="description" class="form-control" id="description" placeholder="Descripcion del Producto"></textarea>
     </div>
   </div>
- 
+ <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Precio de Entrada*</label>
+    <div class="col-md-6">
+      <input type="text" name="price_in" required class="form-control" id="price_in" placeholder="Precio de entrada">
+    </div>
+  </div>
   
   
 
@@ -87,3 +92,4 @@ $categories = CategoryData::getAll();
 });
 
 </script>
+

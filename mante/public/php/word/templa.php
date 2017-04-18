@@ -116,8 +116,8 @@ $templateWord->setValue('l14',$l14);
 $templateWord->saveAs('mante/'.$nuevo.'.docx');
 
 header("Content-Disposition: attachment; filename=".$nuevo.".docx; charset=iso-8859-1");
-echo file_get_contents('mante/'.$nuevo.'.docx');
 
+echo file_get_contents('mante/'.$nuevo.'.docx');
 
 
         

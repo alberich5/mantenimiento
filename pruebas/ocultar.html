@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<script>
+		function pagoOnChange(sel) {
+      if (sel.value=="transferencia"){
+           $("#nCuenta").show();
+           $("#nTargeta").hide();
+
+      }else{
+
+           $("#nCuenta").hide();
+           $("#nTargeta").show();
+
+      }
+}
+	</script>
+</head>
+<body>
+
+<div>
+      <div>
+           <SELECT NAME="pago" onChange="pagoOnChange(this)">
+              <OPTION VALUE="transferencia">Transferéncia</OPTION>
+              <OPTION VALUE="tarjeta">Pago con tarjeta</OPTION> 
+           </SELECT>
+      </div>
+      <div id="nCuenta" style="display:none;">
+           Nuestro numero de cuenta es: 000000000000000000000
+      </div>
+      <div id="nTargeta" style="display:;">
+           <br>
+           Numero*
+           <br>
+           <input type='text' name='nTarjeta'size='20' maxLength='60'>
+           <br><br>
+           Titular*
+           <br>
+           <input type='text' name='titularTarjeta'size='20' maxLength='60'>
+           <br><br>
+           Numero de seguridad*
+           <input type='text' name='numeroSeguridad'size='3' maxLength='3'>
+      </div>
+</div>
+	
+</body>
+</html>

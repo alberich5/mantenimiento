@@ -1,5 +1,5 @@
-	<?php
-	$found=true;
+  <?php
+  $found=true;
 $products = ProductData::getAll();
 foreach($products as $product){
 	$q=OperationData::getQYesF($product->id);	
@@ -87,7 +87,7 @@ foreach($products as $product){
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/alerts-word.php">Word  (.docx)</a></li>
+    <li><a href="report/alerts-word2.php">Word  (.docx)</a></li>
   </ul>
 </div>
 <?php endif;?>

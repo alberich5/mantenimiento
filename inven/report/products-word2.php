@@ -10,58 +10,45 @@ use PhpOffice\PhpWord\Settings;
 Autoloader::register();
 
 
-$word = new  PhpOffice\PhpWord\PhpWord();
+
+
+//le decimos a phpword que vamos a usar el procesador de plantillas
+use PhpOffice\PhpWord\TemplateProcessor;
+//guardamos un objecto de templateprocessor y asinamos ubicacion de la plantilla
+
+$templateWord = new TemplateProcessor('formato2.docx');
+//Optengo todos los productos
 $products = ProductData::getAll();
 
 
-$section1 = $word->AddSection();
-$section1->addText("PRODUCTOS",array("size"=>22,"bold"=>true,"align"=>"right"));
 
 
-$styleTable = array('borderSize' => 6, 'borderColor' => '888888', 'cellMargin' => 40);
-$styleFirstRow = array('borderBottomColor' => '0000FF', 'bgColor' => 'AAAAAA');
 
-$table1 = $section1->addTable("table1");
-$table1->addRow();
-$table1->addCell()->addText("Id");
-$table1->addCell()->addText("Nombre");
+//creo el ciclo para optener el listado
+$templateWord->cloneRow('nombre',count($products));
+for($i=0;$i<count($products);$i++)
+{
 
-$table1->addCell()->addText("Presentacion");
-$table1->addCell()->addText("Categoria");
-$table1->addCell()->addText("Minima en Inv.");
-$table1->addCell()->addText("Activo");
-foreach($products as $product){
-$table1->addRow();
-$table1->addCell(500)->addText($product->id);
-$table1->addCell(5000)->addText($product->name);
+$templateWord->setValue('nombre#'.$i,$products[$i]->name);
+$templateWord->setValue('presentacion#'.$i,$products[$i]->presentation);
+$templateWord->setValue('categoria#'.$i,$products[$i]->getCategory()->name);
+$templateWord->setValue('minima#'.$i,$products[$i]->inventary_min);
+$templateWord->setValue('activo#'.$i,$products[$i]->is_active);
 
 
-$table1->addCell(2000)->addText($product->presentation);
-if($product->category_id!=null){
-	$table1->addCell(2000)->addText($product->getCategory()->name);
 
-}else{
-	$table1->addCell(2000)->addText("---");
-}
-$table1->addCell(2000)->addText($product->inventary_min);
-if($product->is_active){
-$table1->addCell(100)->addText("Si");
-}else{
-$table1->addCell(100)->addText("No");
-}
 }
 
-$word->addTableStyle('table1', $styleTable,$styleFirstRow);
-/// datos bancarios
 
-$filename = "products-".time().".docx";
-#$word->setReadDataOnly(true);
-$word->save($filename,"Word2007");
-//chmod($filename,0444);
-header("Content-Disposition: attachment; filename='$filename'");
-readfile($filename); // or echo file_get_contents($filename);
-unlink($filename);  // remove temp file
 
+
+
+
+// --- Guardamos el documento
+$templateWord->saveAs('Formato.docx');
+//agregamos la cabecera para descargar el documentos desde php
+header("Content-Disposition: attachment; filename=Lista.docx; charset=iso-8859-1");
+echo file_get_contents('Formato.docx');
 
 
 ?>

@@ -1,5 +1,6 @@
 .module_top, .module_bottom{
   visibility: hidden;
+  color: black;
 }
 
 table {

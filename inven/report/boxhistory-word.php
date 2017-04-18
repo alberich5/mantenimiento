@@ -17,7 +17,7 @@ $clients = PersonData::getClients();
 
 
 $section1 = $word->AddSection();
-$section1->addText("HISTORIAL DE CAJA",array("size"=>22,"bold"=>true,"align"=>"right"));
+$section1->addText("HISTORIAL DEL DIA",array("size"=>22,"bold"=>true,"align"=>"right"));
 
 $boxes = BoxData::getAll();
 $products = SellData::getSellsUnBoxed();

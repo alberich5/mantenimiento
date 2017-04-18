@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+ <html>
+<head>
+  <style>
+  p { color:blue; margin:8px; }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <input type="text" id="texto" value="hola"/>
+<h2></h2>
+
+<script>
+var variable =document.getElementById('texto').value;
+
+
+$("input").keyup(function () {
+      var value = $(this).val();
+      $("h2").text(value);
+    }).keyup();
+</script>
+
+</body>
+</html>

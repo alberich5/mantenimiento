@@ -25,9 +25,11 @@ $products = ProductData::getAll();
 <div class="col-md-3">
 <input type="date" name="ed" value="<?php if(isset($_GET["ed"])){ echo $_GET["ed"]; }?>" class="form-control">
 </div>
+ 
 
 <div class="col-md-3">
 <input type="submit" class="btn btn-success btn-block" value="Procesar">
+
 </div>
 
 </div>
@@ -127,3 +129,4 @@ $products = ProductData::getAll();
 
 <br><br><br><br>
 </section>
+

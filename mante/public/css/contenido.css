@@ -2,7 +2,7 @@
   background: red;
 }
 body{
-	 background:url(../images/s.jpg)  no-repeat center fixed;
+	 background:url(../images/modi.jpg)  no-repeat center fixed;
   
   background-size: cover;
   position:relative;
@@ -167,4 +167,28 @@ aside{
 
 #obj{
     font-size: 1.2em;
+}
+#campos{
+    color: red;
+}
+
+
+#campos2{
+    color: red;
+
+}
+
+.boton{
+    font-size: 15px;
+    color: #FFF;
+    background-color: #0040FF;
+    border-radius: 5px;
+}
+#chat{
+    margin-top: -45%;
+    background-color: white;
+    border-radius: 10px;
+    width: 19%;
+    padding: 5px;
+    float: right;
 }

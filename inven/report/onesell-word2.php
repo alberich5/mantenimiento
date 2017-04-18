@@ -21,13 +21,45 @@ use PhpOffice\PhpWord\TemplateProcessor;
 
 $templateWord = new TemplateProcessor('formato1.docx');
 //variables de prueba que rellenan la plantilla
+$sell = SellData::getById($_GET["id"]);
+$operations = OperationData::getAllProductsBySellId($_GET["id"]);
+if($sell->person_id!=null){ $client = $sell->getPerson();}
+$user = $sell->getUser();
+
+$nombre=$client->name." ".$client->lastname;
+$dia=date("d");
+$mes=date("m");
+$ano=date("Y");
+
+foreach($operations as $operation){
+	$product = $operation->getProduct();
+	
+$unidad=$product->presentation;
+$cant=$operation->q;
+$articulo=$product->name;
+
+}
 
 
+
+	$cliente= "OMAR ";
+
+
+$templateWord->setValue('conta','1');
+$templateWord->setValue('nombre',$nombre);
+$templateWord->setValue('cliente',$cliente);
+$templateWord->setValue('dia',$dia);
+$templateWord->setValue('mes',$mes);
+$templateWord->setValue('ano',$ano);
+$templateWord->setValue('articulo',$articulo);
+$templateWord->setValue('unidad',$unidad);
+$templateWord->setValue('cant',$cant);
 // --- Guardamos el documento
 $templateWord->saveAs('Formato.docx');
 //agregamos la cabecera para descargar el documentos desde php
-header("Content-Disposition: attachment; filename=Contrato.docx; charset=iso-8859-1");
+header("Content-Disposition: attachment; filename=Salida".time().".docx; charset=iso-8859-1");
 echo file_get_contents('Formato.docx');
+
 
 
 

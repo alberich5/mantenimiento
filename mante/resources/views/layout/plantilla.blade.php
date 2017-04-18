@@ -13,11 +13,25 @@
     {!!Html::style('css/simple-sidebar.css')!!}
     {!!Html::style('css/contenido.css')!!}
     {!!Html::style('js/lib/sweetalert.css')!!}
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>  
     {!!Html::script('js/jquery.js')!!}
     {!!Html::script('js/lib/sweetalert.min.js')!!}
     
- 
+ <script type="text/javascript">
+    function mostrar(id) {
+        
+        
+        if (id == "autonomo") {
+            $("#autonomo").show();
+        }
+        if (id == "preventivo") {
+            $("#autonomo").hide();
+        }
+       if (id == "correctivo") {
+            $("#autonomo").hide();
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -46,13 +60,7 @@
 
      
 
-    <!-- scrip de lazamiento del boton -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+   
 
 </body>
 
